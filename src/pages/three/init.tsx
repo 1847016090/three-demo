@@ -14,10 +14,9 @@ const InitThree = (props: any) => {
     );
     // 渲染器
     const renderer = new THREE.WebGLRenderer();
-
     renderer.setSize(window.innerWidth, window.innerHeight);
-
     document.body.appendChild(renderer.domElement);
+    renderer.setClearColor("#fff");
 
     // 渲染正方体
     // 生成几何
@@ -33,7 +32,7 @@ const InitThree = (props: any) => {
     function animate() {
       requestAnimationFrame(animate);
       cube.rotation.x += 0.01;
-      cube.rotation.y += 0.1;
+      cube.rotation.y += 0.01;
       renderer.render(scene, camera);
     }
     animate();
