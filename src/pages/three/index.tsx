@@ -4,7 +4,7 @@ import DrawLine from "./draw-line";
 const ThreeDemo = () => {
   return (
     <div>
-      <InitThree />
+      <DrawLine />
     </div>
   );
 };

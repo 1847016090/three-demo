@@ -43,7 +43,7 @@ const DrawLine = (props: any) => {
     points.push(new Vector3(10, 0, 0));
     const geometry = new BufferGeometry().setFromPoints(points);
 
-    // 组合线
+    // 组合材质和几何体
     const line = new Line(geometry, material);
 
     // 将线添加到场景中

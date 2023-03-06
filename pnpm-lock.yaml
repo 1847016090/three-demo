@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@rokid-library/components': ^0.0.3
-  '@rokid-library/micro-app': 0.0.3
   '@types/node': ^18.11.18
   '@types/react': ^18.0.26
   '@types/react-dom': ^18.0.9
@@ -27,7 +26,6 @@ specifiers:
 
 dependencies:
   '@rokid-library/components': 0.0.3_h4ilkk3ikudmrdgpk55t6cy5de
-  '@rokid-library/micro-app': 0.0.3
   '@types/three': 0.149.0
   '@vitejs/plugin-legacy': 3.0.2_terser@5.16.1+vite@4.0.4
   browserslist: 4.21.4
@@ -662,10 +660,6 @@ packages:
       - stylus
       - sugarss
       - terser
-    dev: false
-
-  /@rokid-library/micro-app/0.0.3:
-    resolution: {integrity: sha512-2rmjbW2xYV9hQwrTkx/Pe7sz9i36UmpucYc0O3aGHjsWWuICfCdDHykCZrzoD1vCz/9pimclNpkriTFWn4HPhw==}
     dev: false
 
   /@types/node/18.11.18:
