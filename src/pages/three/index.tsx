@@ -1,11 +1,11 @@
 import InitThree from "./init";
-import DrawLine from "./draw-line";
-import DrawText from "./draw-text";
-
+import Line from "./line";
+import Text from "./text";
+import Model from "./model";
 const ThreeDemo = () => {
   return (
     <div>
-      <DrawText />
+      <Model />
     </div>
   );
 };
