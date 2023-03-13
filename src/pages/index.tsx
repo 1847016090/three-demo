@@ -6,9 +6,8 @@ import TestGlobal from "./test-global-vars";
 import { CaseWrapper } from "@/components";
 import TestComponents from "./test-components";
 import TestThree from "./three";
-
 function App() {
-     return <TestThree  />
+  return <TestThree />;
   //     return (
   //   <CaseWrapper>
   //     {/* <TestGlobal title="测试注入全局的Less变量" />
