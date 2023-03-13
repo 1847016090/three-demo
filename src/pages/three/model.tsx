@@ -2,6 +2,8 @@ import React, { memo, useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 /** @name 加载模型 */
 const Model = (props: any) => {
@@ -30,6 +32,7 @@ const Model = (props: any) => {
     document.body.appendChild(renderer.domElement);
     // 4. 设置背景色
     renderer.setClearColor("#fff");
+    renderer.outputEncoding = THREE.sRGBEncoding;
     // 添加网格
     const gridHelper = new THREE.GridHelper(20, 20);
     scene.add(gridHelper);
@@ -42,7 +45,9 @@ const Model = (props: any) => {
     const onLoad = (gltf) => {
       console.log("gltf", gltf);
       gltf.scene.position.y = 1;
+      //   gltf.scene.scale.set(0.01, 0.01, 0.01);
       scene.add(gltf.scene);
+      render();
     };
 
     const onProgress = (xhr) => {
@@ -50,7 +55,19 @@ const Model = (props: any) => {
     };
 
     const loader = new GLTFLoader();
-    loader.load("./model/dog/scene.gltf", onLoad, onProgress, onError);
+
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("three/examples/jsm/libs/draco/");
+    loader.setDRACOLoader(dracoLoader);
+
+    loader.setPath("./model/robot/");
+    loader.load("scene.gltf", onLoad, onProgress, onError);
+    // loader.parse(
+    //   "./model/spear/scene.gltf",
+    //   "./model/spear/texture",
+    //   onLoad,
+    //   onError
+    // );
     // 创建几何体
     // 组合材质和几何体
     // 鼠标控件
